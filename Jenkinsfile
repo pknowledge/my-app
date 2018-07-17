@@ -1,20 +1,15 @@
-pipeline { 
-    agent any 
-    stages {
-        stage('Build') { 
-            steps { 
-                sh 'mvn test' 
-            }
-        }
-        stage('Test'){
-            steps {
-                sh 'mvn test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'mvn build'
-            }
-        }
+pipeline {
+  ...
+  stages {
+    stage('HelloWorld') {
+      steps {
+        echo 'Hello World'
+      }
     }
+    stage('git clone') {
+      steps {
+        echo 'Hello World'
+      }
+    }
+  }
 }
