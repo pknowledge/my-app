@@ -11,14 +11,14 @@ pipeline {
                 bat "mvn install"
             }
         }
-        stage('Example Build') {
-            steps {
-                bat "mvn build"
-            }
-        }
         stage('Example test') {
             steps {
                 bat "mvn test"
+            }
+        }
+        stage('Example package') {
+            steps {
+                bat "mvn package"
             }
         }
     }
