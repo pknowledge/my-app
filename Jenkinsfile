@@ -1,15 +1,14 @@
 pipeline {
- 
-  stages {
-    stage('HelloWorld') {
-      steps {
-        echo 'Hello World'
-      }
-    }
-    stage('git clone') {
-      steps {
-        echo 'Hello World'
-      }
-    }
-  }
+    agent any
+    stages {
+
+        stage('testing pipeline'){
+          steps{
+		    echo 'test1'
+                sh 'mkdir from-jenkins'
+                sh 'touch from-jenkins/test.txt'
+                }
+        }
+
+}
 }
