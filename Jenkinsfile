@@ -1,14 +1,28 @@
 pipeline {
+
     agent any
+    tools {
+        maven 'Maven_3.5.2' 
+    }
     stages {
-
-        stage('testing pipeline'){
-          steps{
-		    echo 'test1'
-                sh 'mkdir from-jenkins'
-                sh 'touch from-jenkins/test.txt'
-                }
+        stage('Compile stage') {
+            steps {
+                bat "mvn clean compile" 
         }
+    }
 
-}
+         stage('testing stage') {
+             steps {
+                bat "mvn test"
+        }
+    }
+
+          stage('deployment stage') {
+              steps {
+                bat "mvn deploy"
+        }
+    }
+
+  }
+
 }
