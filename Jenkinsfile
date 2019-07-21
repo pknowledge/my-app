@@ -1,16 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('---clean---') {
+        stage('Build') {
             steps {
-                sh "mvn clean"
+                echo "prasad master"
             }
-        }
-        
-        stage('--package--') {
-            steps {
-                sh "mvn package"
-            }
-        }
-    }
-}
+        }   
+    }   
+}   
